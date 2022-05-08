@@ -3,13 +3,16 @@ body, html {
     margin: 0;
     font-family: sans-serif;
     font-size: 14px;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.1px;
+    background-color:#000000;
 }
 
 .background {
-    background-image: url("../images/background.jpg");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.00),
+    rgba(0, 0, 0, 0.90)), url("../images/background.jpg");
     filter: blur(8px);
     -webkit-filter: blur(8px);
+    width: 100%;
     height: 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -24,14 +27,6 @@ body, html {
     height: auto;
     width: 130px;
     border-radius: 50%;
-}
-
-.dark-mode {
-    background-color: rgba(0,0,0, 0.8);
-    position: absolute;
-    top: 0%;
-    left: 50%;
-    transition: .5s;
 }
 
 .link-tree {
@@ -52,12 +47,14 @@ body, html {
     font-size: 25px;
     margin: 2px;
     text-shadow: 0 0 10px #FFFFFF;
+    transition: 0.5s;
 }
 
 .link-tree p {
     font-size: 15px;
     margin: 2px;
     text-shadow: 0 0 5px #FFFFFF;
+    transition: 0.5s;
 }
 
 .link-tree .links {
@@ -85,7 +82,7 @@ body, html {
 
 .link-tree button {
     margin: 10vh;
-    background-color: rgba(34, 34, 34, 0.6);;
+    background-color: rgba(34, 34, 34, 0.6);
     border: none;
     color: white;
     text-decoration: none;
@@ -93,4 +90,43 @@ body, html {
     font-size: 16px;
     border-radius: 20px;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+/* Dark mode */
+.dark-mode .background {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.95),
+    rgba(0, 0, 0, 0.95)), url("../images/background.jpg");
+}
+
+.dark-mode .link-tree h1 {
+    color: #FFFFFF;
+    text-shadow: 0 0 0px #FFFFFF;
+    transition: 0.5s;
+}
+
+.dark-mode .link-tree p {
+    color: #FFFFFF;
+    text-shadow: 0 0 0px #FFFFFF;
+    transition: 0.5s;
+}
+
+.dark-mode .link-tree .links {
+    color: #000000;
+    background-color: rgba(209, 209, 209, 0.6);
+    box-shadow: inset 0 -2px 0 #FFFFFF;
+    border-radius: 25px;
+    border: 2px solid #FFFFFF;
+    transition: 0.5s;
+}
+
+.dark-mode .link-tree .links:hover {
+    box-shadow: 0 0 10px #FFFFFF;
+    text-shadow: 0 0 10px #000000;
+}
+
+.dark-mode .link-tree button {
+    background-color: rgba(209, 209, 209, 0.6);
+    color: #000000;
+    transition: 0.5s;
 }
